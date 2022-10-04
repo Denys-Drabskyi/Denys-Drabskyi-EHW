@@ -14,9 +14,19 @@ public class PetConfig {
         return new Cheetah();
     }
 
-    @Bean
-    @Qualifier(value = "test")
+    @Bean ("test")
     public Cheetah cheetah2 (){
         return new Cheetah();
     }
+
+    @Bean
+    public int test1 (Cheetah cheetah) {
+        return cheetah.hashCode();
+    }
+
+    @Bean
+    public int test2 (@Qualifier("test") Cheetah cheetah) {
+        return cheetah.hashCode();
+    }
+
 }
