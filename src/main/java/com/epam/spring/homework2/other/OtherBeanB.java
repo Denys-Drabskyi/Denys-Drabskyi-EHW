@@ -1,6 +1,6 @@
-package com.epam.spring.homework1.other;
+package com.epam.spring.homework2.other;
 
-import com.epam.spring.homework1.beans.BeanB;
+import com.epam.spring.homework2.beans.BeanB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
