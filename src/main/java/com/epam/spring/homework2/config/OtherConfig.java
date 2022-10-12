@@ -1,11 +1,12 @@
 package com.epam.spring.homework2.config;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import com.epam.spring.homework2.beans.BeanA;
+import com.epam.spring.homework2.beans.BeanE;
+import com.epam.spring.homework2.beans.BeanF;
+import org.springframework.context.annotation.*;
+import org.springframework.core.annotation.Order;
 
 @Configuration
-@Import(PetConfig.class)
-@ComponentScan(basePackages = {"com.epam.spring.homework2.other"})
 public class OtherConfig {
+
 }

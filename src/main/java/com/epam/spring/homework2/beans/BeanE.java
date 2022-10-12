@@ -1,17 +1,28 @@
 package com.epam.spring.homework2.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
-public class BeanE {
-    String name;
-    String value;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
-    @Override
-    public String toString() {
-        return "BeanE{" +
-                "name='" + name + '\'' +
-                ", value='" + value + '\'' +
-                '}';
+@Component
+@Qualifier("test")
+public class BeanE extends MyBean{
+
+    public BeanE(@Autowired int value) {
+        super(value);
     }
+
+    @PostConstruct
+    private void postConstruct (){
+        System.out.println("BeanE PostConstruct");
+    }
+
+    @PreDestroy
+    private void PreDestroy (){
+        System.out.println("BeanE PreDestroy");
+    }
+
 }
