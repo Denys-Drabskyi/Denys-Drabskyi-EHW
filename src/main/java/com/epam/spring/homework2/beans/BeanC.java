@@ -14,7 +14,5 @@ public class BeanC {
                 ", value='" + value + '\'' +
                 '}';
     }
-    public BeanC() {
-        System.out.println(this.getClass().getSimpleName());
-    }
+
 }

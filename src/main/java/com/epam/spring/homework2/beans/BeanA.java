@@ -15,7 +15,4 @@ public class BeanA {
                 '}';
     }
 
-    public BeanA() {
-        System.out.println(this.getClass().getSimpleName());
-    }
 }
