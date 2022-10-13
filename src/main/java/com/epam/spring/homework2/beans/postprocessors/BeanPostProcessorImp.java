@@ -11,15 +11,16 @@ import java.lang.reflect.Field;
 public class BeanPostProcessorImp implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if(!isValid(bean)){
-            throw new RuntimeException(beanName+" is not valid");
+        if (bean instanceof MyBean myBean){
+            if(isValid(myBean)){
+                System.out.println(beanName+" is valid");
+            } else throw new RuntimeException(beanName+" is not valid");
+
         }
-        System.out.println(beanName+" is valid");
         return bean;
     }
 
-    private boolean isValid(Object bean) {
-        MyBean myBean = (MyBean) bean;
+    private boolean isValid(MyBean myBean) {
         return myBean.getName() != null && myBean.getValue() > 0;
     }
 }
