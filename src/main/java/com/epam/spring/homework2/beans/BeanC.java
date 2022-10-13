@@ -1,9 +1,5 @@
 package com.epam.spring.homework2.beans;
 
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
-@Component
 public class BeanC extends MyBean{
 
     public BeanC(String name, int value) {

@@ -1,9 +1,5 @@
 package com.epam.spring.homework2.beans;
 
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-
-@Component
 public class BeanB extends MyBean{
 
     public BeanB(String name, int value) {
@@ -14,7 +10,7 @@ public class BeanB extends MyBean{
         System.out.printf("%s, init%n", this.getClass().getSimpleName());
     }
 
-    private void init2() {
+    private void anotherInit() {
         System.out.printf("%s, init2%n", this.getClass().getSimpleName());
     }
 

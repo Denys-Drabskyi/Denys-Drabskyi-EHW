@@ -2,25 +2,24 @@ package com.epam.spring.homework2.beans;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("test")
+@DependsOn({"beanD","beanB","beanC"})
 public class BeanA extends MyBean implements InitializingBean, DisposableBean {
 
-    public BeanA(@Autowired int value) {
+    public BeanA(int value) {
         super(value);
     }
 
     @Override
-    public void destroy() throws Exception {
+    public void destroy(){
         System.out.println("BeanA destroy");
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet(){
         System.out.println("BeanA afterPropertiesSet");
     }
 }
